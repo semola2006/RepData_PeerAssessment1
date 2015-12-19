@@ -43,7 +43,7 @@ require(ggplot2)
 
 To answer that we first need to prepare a table the summarises the info and then create a histogram 
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, fig.path="figures"}
 total_steps_day <-  activity %>%
                     group_by(date) %>%
                     summarise(total = sum(steps)) 
@@ -72,7 +72,7 @@ print(total_steps_avg)
 ### What is the average daily activity pattern?
 prepare a summary of info needed and then plot the line that describes avg. steps taken per time interval of all days. Time intervals are 5 minutes long and you can read for example 0005 as 00:05, 0130 as 1:30 and so on every 5 minutes.
 
-```{r,fig.height=6, fig.width=10, echo=TRUE}
+```{r,fig.height=6, fig.width=10, echo=TRUE, fig.path="figure"}
 question2 <-  activity %>%
               group_by(interval)%>%
               summarise(steps_mean = mean(steps, na.rm =TRUE))
@@ -109,7 +109,7 @@ new_activity$steps2 <- new_activity$steps
 ```
 
 Re-cylce code and date from first part of assignmet, this time using steps2 for graph and calculations
-```{r, echo=TRUE}  
+```{r, echo=TRUE, fig.path="figures"}  
 total_steps_day2 <-  new_activity %>%
     group_by(date) %>%
     summarise(total = sum(steps2)) 
@@ -138,7 +138,7 @@ we first need to add one column specifying the factor weekend or weekday.
 Here you will see "sabato" "Domenica" which are the Italian for "Saturday" and "Sunday" respectively"
 After, we can plot the lines reflecting this factor on two different panels.
 
-```{r, echo=TRUE}
+```{r, echo=TRUE, fig.path="figures"}
 new_activity$weekend <- as.factor(ifelse(weekdays(new_activity$date) %in% c("domenica", "sabato"), "week-ends", "week-days"))
 
 split_panels <-  new_activity %>%
