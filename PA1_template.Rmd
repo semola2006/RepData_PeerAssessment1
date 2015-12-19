@@ -1,7 +1,7 @@
 ---
 title: "Assignment #1 of Reproducible research course"
 author: "Alberto Pellegata"
-date: "17 dicembre 2015"
+date: "17 december 2015"
 output: html_document
 ---
 
