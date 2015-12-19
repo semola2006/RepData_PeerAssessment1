@@ -27,6 +27,10 @@ Need to read the csv first using:
 activity <- read.csv("activity.csv", header = TRUE, sep = ",", quote = "\"" , na.strings = "NA")
 ```
 
+```{r, opts_chunk$set(cache=TRUE, cache.path = 'DocumentName_cache/', fig.path='figures/')}
+```
+
+
 After, we need to process dates to enable plotting histogram later
 ```{r, echo=TRUE} 
 activity$date <- as.Date(as.character(activity$date))
@@ -43,7 +47,7 @@ require(ggplot2)
 
 To answer that we first need to prepare a table the summarises the info and then create a histogram 
 
-```{r, echo=TRUE, fig.path="figures"}
+```{r, echo=TRUE, fig.path="figures/"}
 total_steps_day <-  activity %>%
                     group_by(date) %>%
                     summarise(total = sum(steps)) 
