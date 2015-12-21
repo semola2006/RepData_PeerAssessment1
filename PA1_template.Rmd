@@ -5,6 +5,7 @@ date: "17 december 2015"
 output: 
   html_document: 
     fig_caption: yes
+    toc: yes
 ---
 
 ## Objective and sources:
@@ -29,7 +30,7 @@ Need to read the csv first using:
 activity <- read.csv("activity.csv", header = TRUE, sep = ",", quote = "\"" , na.strings = "NA")
 ```
 
-```{r, opts_chunk$set(cache=TRUE, cache.path = 'RepAssignmet1_cache/', fig.path='figures/')}
+```{r, opts_chunk$set(cache=TRUE, fig.path="figures")}
 ```
 
 
@@ -49,7 +50,7 @@ require(ggplot2)
 
 To answer that we first need to prepare a table the summarises the info and then create a histogram 
 
-```{r, echo=TRUE, fig.path="figures/"}
+```{r, echo=TRUE, fig.path="figures"}
 total_steps_day <-  activity %>%
                     group_by(date) %>%
                     summarise(total = sum(steps)) 
