@@ -30,7 +30,7 @@ Need to read the csv first using:
 activity <- read.csv("activity.csv", header = TRUE, sep = ",", quote = "\"" , na.strings = "NA")
 ```
 
-```{r, opts_chunk$set(cache=TRUE, fig.path="figures")}
+```{r, opts_chunk$set(cache=TRUE, fig.path="figures/")}
 ```
 
 
@@ -50,7 +50,7 @@ require(ggplot2)
 
 To answer that we first need to prepare a table the summarises the info and then create a histogram 
 
-```{r, echo=TRUE, fig.path="figures"}
+```{r, echo=TRUE, fig.path="figures/"}
 total_steps_day <-  activity %>%
                     group_by(date) %>%
                     summarise(total = sum(steps)) 
@@ -138,7 +138,7 @@ total_steps_avg2 <-  total_steps_day2 %>%
 print(total_steps_avg2)
 ```
 
-We see that values with imputing filligs for NAs differ from first part of the assignment. However, the difference in total mean and median is not substantial.
+We see that values with imputing filligs for NAs differ from first part of the assignment. However, the mean is the same valkue and the difference in median is not substantial.
 
 ### Are there differences in activity patterns between weekdays and weekends?
 we first need to add one column specifying the factor weekend or weekday.

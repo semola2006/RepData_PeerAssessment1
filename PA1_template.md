@@ -45,28 +45,7 @@ Now upload the R packages we will use in the course of the anaylsis.
 
 ```r
 require(dplyr)
-```
-
-```
-## Loading required package: dplyr
-## 
-## Attaching package: 'dplyr'
-## 
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-## 
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 require(ggplot2)
-```
-
-```
-## Loading required package: ggplot2
 ```
 
 ### What is mean total number of steps taken per day?
@@ -91,7 +70,7 @@ hist(total_steps_day$total,
      breaks=10)
 ```
 
-![plot of chunk unnamed-chunk-4](figuresunnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figures/unnamed-chunk-4-1.png) 
 
 After we can calculate the mean and median step taken per day
 
@@ -212,7 +191,7 @@ print(total_steps_avg2)
 ## 1 10766.19 10766.19
 ```
 
-We see that values with imputing filligs for NAs differ from first part of the assignment. However, the difference in total mean and median is not substantial.
+We see that values with imputing filligs for NAs differ from first part of the assignment. However, the mean is the same valkue and the difference in median is not substantial.
 
 ### Are there differences in activity patterns between weekdays and weekends?
 we first need to add one column specifying the factor weekend or weekday.
